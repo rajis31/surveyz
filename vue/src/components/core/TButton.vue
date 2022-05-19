@@ -55,6 +55,7 @@ if (props.link) {
       break;
     case "red":
       classes.value = [...classes.value, "text-red-500", "focus:border-red-500"];
+      break;
   }
 
 } else {
