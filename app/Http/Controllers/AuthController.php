@@ -1,10 +1,4 @@
 <?php
-/**
- * User: Zura
- * Date: 12/19/2021
- * Time: 3:49 PM
- */
-
 namespace App\Http\Controllers;
 
 
@@ -16,8 +10,6 @@ use Illuminate\Validation\Rules\Password;
 
 /**
  * Class AuthController
- *
- * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
  * @package App\Http\Controllers
  */
 class AuthController extends Controller
@@ -34,7 +26,6 @@ class AuthController extends Controller
             ]
         ]);
 
-        /** @var \App\Models\User $user */
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -78,7 +69,6 @@ class AuthController extends Controller
     {
         /** @var User $user */
         $user = Auth::user();
-        // Revoke the token that was used to authenticate the current request...
         $user->currentAccessToken()->delete();
 
         return response([
