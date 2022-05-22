@@ -79,7 +79,7 @@
 <script setup>
 import { ref } from "vue";
 import { LockClosedIcon } from "@heroicons/vue/solid";
-import store from "../store";
+import store from "../store/store";
 import { useRouter } from "vue-router";
 import TButtonLoading from "../components/core/TButtonLoading.vue";
 import TInput from "../components/core/TInput.vue";
@@ -106,6 +106,7 @@ function register(ev) {
       });
     })
     .catch((error) => {
+      console.log(error);
       loading.value = false;
       if (error.response.status === 422) {
         errors.value = error.response.data.errors;

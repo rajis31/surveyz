@@ -103,7 +103,7 @@
 
 <script setup>
 import { LockClosedIcon } from "@heroicons/vue/solid";
-import store from "../store";
+import store from "../store/store";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 import Alert from "../components/Alert.vue";
@@ -132,7 +132,8 @@ function login(ev) {
     })
     .catch((err) => {
       loading.value = false;
-      errorMsg.value = err.response.data.error;
+      console.log(err);
+      errorMsg.value = err?.response.data.message;
     });
 }
 </script>
