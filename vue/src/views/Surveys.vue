@@ -27,7 +27,6 @@
           class="relative z-0 inline-flex justify-center rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
-          <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
           <a
             v-for="(link, i) of surveys.links"
             :key="i"
@@ -63,9 +62,10 @@ import TButton from '../components/core/TButton.vue'
 import PageComponent from "../components/PageComponent.vue";
 import SurveyListItem from "../components/SurveyListItem.vue";
 
-const surveys = computed(() => store.state.surveys);
 
 store.dispatch("getSurveys");
+const surveys = computed(() => store.state.surveys);
+
 
 function deleteSurvey(survey) {
   if (

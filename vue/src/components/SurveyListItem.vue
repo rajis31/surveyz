@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col py-4 px-6 shadow-md bg-white hover:bg-gray-50 h-[470px]"
+    class="flex flex-col py-4 px-6 shadow-md bg-white opacity-100 hover:bg-gray-50 h-[470px]"
   >
     <img
       :src="
